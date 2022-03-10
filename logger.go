@@ -273,7 +273,7 @@ func (c *Logger) Warnd(dur time.Duration) LogFunc {
 	return func(template string, args ...interface{}) {
 		el := time.Since(ts)
 		if el > dur {
-			c.logger.Debugf(c.makeDurationMsg(template, args, time.Since(ts)))
+			c.logger.Warnf(c.makeDurationMsg(template, args, time.Since(ts)))
 		}
 	}
 }
